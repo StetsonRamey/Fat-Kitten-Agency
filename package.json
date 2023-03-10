@@ -19,7 +19,8 @@
   "scripts": {
     "start": "concurrently 'npm run serve' 'npm run css -- --watch'",
     "serve": "npx eleventy --serve",
-    "css": "npx postcss src/css/global.css -o dist/css/global.css"
+    "css": "npx postcss src/css/global.css -o dist/css/global.css",
+    "production": "NODE_ENV=production npx eleventy && NODE_ENV=production npm run css"
   },
   "keywords": [],
   "author": "Stetson Ramey <stetson.ramey@hey.com>",
