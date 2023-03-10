@@ -1,0 +1,28 @@
+{
+  "name": "agency-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "eslint.packageManager": "pnpm",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.0",
+    "@11ty/eleventy-plugin-webc": "^0.9.3",
+    "concurrently": "^7.6.0",
+    "cssnano": "^5.1.15",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "postcss-import-ext-glob": "^2.1.1",
+    "postcss-js": "^4.0.1",
+    "slugify": "^1.6.5",
+    "tailwindcss": "^3.2.7"
+  },
+  "scripts": {
+    "start": "concurrently 'npm run serve' 'npm run css -- --watch'",
+    "serve": "npx eleventy --serve",
+    "css": "npx postcss src/css/global.css -o dist/css/global.css"
+  },
+  "keywords": [],
+  "author": "Stetson Ramey <stetson.ramey@hey.com>",
+  "license": "MIT",
+  "description": ""
+}

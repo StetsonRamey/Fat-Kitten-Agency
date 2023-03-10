@@ -1,0 +1,9 @@
+.accent-me {
+  text-decoration: underline;
+  padding-inline: 0 5px;
+  background: linear-gradient(to bottom, transparent 50%, var(--color-secondary) 20%);
+}
+
+.accent-me[data-width='thin'] {
+  background: linear-gradient(to bottom, transparent 94%, var(--color-secondary) 20%);
+}

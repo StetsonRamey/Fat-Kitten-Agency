@@ -1,0 +1,36 @@
+.form-field {
+  --form-field-width: 40ch;
+
+  /* //reset the defaults */
+  background-color: #fff;
+  border: 2px solid;
+  border-radius: var(--border-radius);
+  padding: var(--space-s) var(--space-m);
+  font-family: inherit;
+  color: inherit;
+  /* //fallback for safari zoom */
+  font-size: 16px;
+  /* // Caps this to prevent sass thinking it's the sass max() function */
+  font-size: Max(16px, 1em);
+  max-width: 100%;
+  /* width: var(--form-field-width, 30ch); */
+  width: min(100%, var(--form-field-width));
+}
+
+.form-button {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+legend {
+  padding: 0;
+}
