@@ -1,0 +1,8 @@
+.small-h1 {
+  max-width: 50ch;
+  font-size: var(--size-step-1);
+  line-height: 1.4;
+  letter-spacing: var(--tracking);
+  color: var(--color-primary);
+  margin-bottom: var(--space-m);
+}

@@ -1,8 +1,8 @@
 ---
-title: "We build awesome websites and automate mundane tasks."
+preTitle: "Santa Barbara Web Design, Web Development, and Business Automation"
+title: "We build awesome websites and automate repetitive tasks."
 summary: "Need a stunning website that search engines love?  Want to let a computer do the repetitive business tasks that annoy you?  We're here to help with all that."
 layout: "layouts/home.njk"
-
 who:
   title: "We work with"
   businesses:
@@ -10,6 +10,7 @@ who:
     - "Restaurants"
     - "Pet Groomers"
     - "Seasonal Businesses"
+    - "Gyms"
   quote: "If you move data around or perform tasks that feel the same with different data, there's a great chance a computer can do that for you."
 
 skills:
@@ -59,7 +60,6 @@ skills:
 
 how:
   quote: "So how can we help you out?"
-
 ---
 
 ## So who are we?

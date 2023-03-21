@@ -10,13 +10,23 @@
     <header class="section p-s">
       <div class="section__inner">
         <div class="wrapper flow region" style="--region-space: 1em;">
-          <h1 class="">{{ title }}</h1>
+          <div>
+            <h1 class="small-h1">{{ preTitle }}</h1>
+            <p class="looks-like-h1">{{ title }}</p>
+          </div>
           <p>{{ summary }}</p>
         </div>
       </div>
       <div class="section__inner wrapper region" style="--region-space: var(--space-s)">
         <h3>Get in touch</h3>
-        <form class="grid items-center" name="contact" id="contact-form" autocomplete="off" action="" data-layout="50-50">
+        <form
+          class="form grid items-center"
+          method="POST"
+          name="contact"
+          id="contact-form"
+          autocomplete="off"
+          action="https://fat-kitten-form-submit.stetson.workers.dev/"
+          data-layout="50-50">
           <fieldset>
             <div class="form-group">
               <label for="email">Email</label>
@@ -44,67 +54,75 @@
             get noticed, get organized, and get time back.</p>
         </div>
         <div class="wrapper">
-          <img src="../images/airtable-mac.jpg" alt="A macbook pro with Airtable in the browser" srcset=""></div>
+          {% image "./src/images/airtable-mac.jpg", "A macbook pro with Airtable in the browser" %}
         </div>
-        <div class="section flow-space-2xl-3xl spot-color-secondary-glare">
-          <blockquote class="wrapper">
-            <p>{{ who.quote }}</p>
-          </blockquote>
+      </div>
+      <div class="section flow-space-2xl-3xl spot-color-secondary-glare">
+        <blockquote class="wrapper">
+          <p>{{ who.quote }}</p>
+        </blockquote>
+      </div>
+    </article>
+    <article class="region">
+      <div class="wrapper flow prose">
+        {{ content | safe }}
+      </div>
+    </article>
+    <article class="spot-color-dark section">
+      <div class="section__inner region">
+        <div class="wrapper flow">
+          <h2>{{ skills.title }}</h2>
+          <p>{{ skills.summary }}</p>
+          <ul class="features grid mt-l-xl" role="list" data-layout="50-50">
+            {% for item in skills.items %}
+              <li class="flow text-left">
+                <div aria-hidden="true">
+                  {% include 'icons/' + item.icon %}
+                </div>
+                <h4>
+                  <a class="accent-me" data-width="thin" href="{{ item.link }}">{{ item.title }}</a>
+                </h4>
+                <p class="text-primary-glare text-step-0 text-left">for:
+                  <span class="text-secondary">{{ item.for }}</span>
+                </p>
+                <p class="text-left">{{ item.summary | md | safe }}</p>
+              </li>
+            {% endfor %}
+          </ul>
         </div>
-      </article>
-      <article class="region">
-        <div class="wrapper flow prose">
-          {{ content | safe }}
-        </div>
-      </article>
-      <article class="spot-color-dark section">
-        <div class="section__inner region">
-          <div class="wrapper flow">
-            <h2>{{ skills.title }}</h2>
-            <p>{{ skills.summary }}</p>
-            <ul class="features grid mt-l-xl" role="list" data-layout="50-50">
-              {% for item in skills.items %}
-                <li class="flow text-left">
-                  <div aria-hidden="true">
-                    {% include 'icons/' + item.icon %}
-                  </div>
-                  <h4>
-                    <a class="accent-me" data-width="thin" href="{{ item.link }}">{{ item.title }}</a>
-                  </h4>
-                  <p class="text-primary-glare text-step-0 text-left">for:
-                    <span class="text-secondary">{{ item.for }}</span>
-                  </p>
-                  <p class="text-left">{{ item.summary | md | safe }}</p>
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-        </div>
-      </article>
-      <article class="region flow flow-space-2xl pt-[0] mt-[0]">
-        <div class="section spot-color-secondary-glare">
-          <blockquote class="wrapper">
-            <p>{{ how.quote }}</p>
-          </blockquote>
-        </div>
-        {% include 'components/test.njk' %}
-      </article>
-      <article class="section">
-        <div class="wrapper section__inner region" style="--region-space: var(--space-s)">
-          <h2>So, let's talk</h2>
-          <form class="grid items-center" name="contact" id="contact-form" autocomplete="off" action="" data-layout="50-50">
-            <fieldset>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" class="form-field" aria-describedby="email-address"/>
-                <span id="id" class="field-description">me@mycooldomain.com</span>
-              </div>
-            </fieldset>
+      </div>
+    </article>
+    <article class="region flow flow-space-2xl pt-[0] mt-[0]">
+      <div class="section spot-color-secondary-glare">
+        <blockquote class="wrapper">
+          <p>{{ how.quote }}</p>
+        </blockquote>
+      </div>
+      {% include 'components/test.njk' %}
+    </article>
+    <article class="section">
+      <div class="wrapper section__inner region" style="--region-space: var(--space-s)">
+        <h2>So, let's talk</h2>
+        <form
+          class="grid items-center"
+          name="contact"
+          id="contact-form"
+          autocomplete="off"
+          action="https://fat-kitten-form-submit.stetson.workers.dev/"
+          method="POST"
+          data-layout="50-50">
+          <fieldset>
             <div class="form-group">
-              <button type="submit" class="form-button">Submit</button>
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" class="form-field" aria-describedby="email-address"/>
+              <span id="id" class="field-description">me@mycooldomain.com</span>
             </div>
-          </form>
-        </div>
-      </article>
-    </main>
-  {% endblock %}
+          </fieldset>
+          <div class="form-group">
+            <button type="submit" class="form-button">Submit</button>
+          </div>
+        </form>
+      </div>
+    </article>
+  </main>
+{% endblock %}

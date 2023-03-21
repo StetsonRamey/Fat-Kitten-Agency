@@ -1,0 +1,7 @@
+.looks-like-h1 {
+  max-width: 20ch;
+  font-size: var(--size-step-5);
+  line-height: 1;
+  letter-spacing: var(--tracking-s);
+  font-weight: bold;
+}
