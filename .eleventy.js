@@ -41,8 +41,11 @@ module.exports = (config) => {
   config.setUseGitIgnore(false);
 
   config.addPassthroughCopy("./src/fonts");
-  config.addPassthroughCopy("./src/images");
-  config.addPassthroughCopy("./src/js");
+  config.addPassthroughCopy("./src/favicons");
+  //don't need this since we're running these through 11ty-image plugin
+  // config.addPassthroughCopy("./src/images");
+  // don't need since I removed javascript for the form submit
+  // config.addPassthroughCopy("./src/js");
 
   config.addFilter("md", require("./src/filters/md.js"));
 
