@@ -42,6 +42,7 @@ module.exports = (config) => {
 
   config.addPassthroughCopy("./src/fonts");
   config.addPassthroughCopy("./src/favicons");
+  config.addPassthroughCopy("./src/robots.txt");
   //don't need this since we're running these through 11ty-image plugin
   // config.addPassthroughCopy("./src/images");
   // don't need since I removed javascript for the form submit
